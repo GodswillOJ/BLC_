@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    padding: 0;
+}
+body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100%;
+}
+a{
+    text-decoration: none;
+}
+@media screen and (max-width: 1886px) {
+    .blockchain_{
+        margin: 0;
+        width: 100%;
+        background-color: rgb(18, 29, 51)
+    }
+    section{
+        height: 100%;
+    }
+    .top_link{
+        position: static;
+        padding: 0 5% 0 5%;
+        z-index: 9;
+        font-size: 0.875rem;
+    }
+    .login_links{
+        display: flex; 
+    }
+    .login_links a{
+        width: 100%;
+    }
+    .content{
+        padding-top: 7%;
+    }
+    .login_cont{
+        position: relative;
+        padding: 0 32% 5% 32%;
+    }
+    .login_block{
+        border-radius: 8px;
+    }
+    .icon1{
+        padding: 18px;
+    }
+    input{
+        padding: 6px 12px;
+        border-radius: 5px;
+        line-height: 32px;
+        border: 1px solid rgb(110, 160, 230);
+    }
+    .highlighted-text:active{
+        color: red;
+    }
+    input:active, input:focus { 
+        font-size: 13px;
+        border: 1px solid rgb(217, 59, 48);
+        outline: none; 
+        background-color: #ffffff;
+      }
+    /* Style for the input when it is focused/active */
+    input[type='submit']{
+        background: rgb(146, 190, 221);
+        border: none;
+        color: white;
+        margin-top: 5%;
+        padding: 10px 28px;
+        line-height: 28px;
+        margin-bottom: 5px;
+    }
+    .blc_act{
+        text-align: center; 
+        border-top: 1px solid rgb(181, 178, 178); 
+        display: flex;
+        display: flex;
+        -webkit-box-pack: center;
+        justify-content: center;
+        margin-top: 24px;
+        border-top: 1px solid rgb(240, 242, 247);
+        padding: 10px 0 10px 0;
+    }
+    .blc_act h5{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: inherit;
+        text-transform: none;
+        font-style: normal;
+        color: rgb(103, 113, 132);
+        cursor: inherit;
+        display: block;
+        opacity: 1;
+    }
+    .blc_act a{
+        font-size: 16px;
+        font-weight: 600;
+        color: rgb(12, 108, 242);
+        text-transform: none;
+        text-decoration: none;
+        padding-left: 2px;
+    }
+    form{
+        margin-top: 5%;
+        padding-top: 5%;
+        padding: 0 5% 0 5%;
+    }
+    .blk_phrase{
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    }
+    .blk_phrase p{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 1.5;
+        text-transform: none;
+        font-style: normal;
+        color: rgb(103, 113, 132);
+        cursor: inherit;
+        display: block;
+        opacity: 1;
+    }
+    .blk_phrase .recov{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.5;
+        text-transform: none;
+        font-style: normal;
+        color: rgb(18, 29, 51);
+        cursor: inherit;
+        display: block;
+        opacity: 1;
+    }
+    .blockchain_logo{
+        background-image: url('https://login.blockchain.com/img/bg-pattern.svg');
+        box-sizing: border-box;
+        position: relative;
+        padding: 0 0 43px 0;
+        margin-top: 0;
+        height:6rem;
+        bottom: 18px;
+        background-color: rgb(18, 29, 51)
+    }
+    .blockchain_logo img{
+        width: 240px;
+    }
+    .verify_logo{
+        display: flex; 
+        bottom: 0; 
+        margin-bottom: 0;
+    }
+}
+
+
+/* min screen view */
+@media screen and (max-width: 768px){
+    .login_cont{
+        padding: 13px 13px;
+        bottom: 2rem;
+    }
+    .login_block{
+        bottom: 30%;
+    }
+    .top_link{
+        position: relative;
+        padding: 0.25rem 1rem;
+        font-size: 0.875rem;
+        /* font-size: 0.75rem; */
+        height: 32px;
+        width: 100%;
+        font-weight: bold;
+    } 
+    .blockchain_logo {
+        margin: 0;
+        bottom: 3rem;
+    
+    }
+    .blockchain_logo img {
+        position: relative;
+        width: 200px;
+        top: 3rem;
+    }
+    
+    section{
+        height: 100%;
+        min-height: 100%;
+    }
+}
+@media screen and (max-width:510px) {
+    .top_link{
+        width: 100%;
+        height: 50px;
+    }
+}
+@media screen and (max-width:490px) {
+    .blockchain_logo img {
+        position: relative;
+        width: 200px;
+        top: 1.8rem;
+    }
+    .top_link{
+        width: 100%;
+        height: 50px;
+        font-size: 0.75rem;
+        line-height: 20px;
+        padding: 0 12% 0 12%;
+    }
+    .top_link p {
+        padding: 0 10% 0 10%;
+    }
+    .blc_act{
+    display: block;
+    }   
+    #blc_logo{
+        position: relative;
+        
+    }
+    .login_blk{
+        margin-top: 7%;
+    }
+    #blockchain_logo_{
+        bottom: 0.8rem
+    }
+
+}

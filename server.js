@@ -21,7 +21,7 @@ app.set("view engine", "ejs")
 
 app.get('/', (req, res) => {
     try {
-        res.render('docs/login')
+        res.render('docs/login.ejs')
     } catch (error) {
         console.log(error.message)
     }

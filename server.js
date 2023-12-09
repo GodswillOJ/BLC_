@@ -19,9 +19,9 @@ app.use("/js", express.static(__dirname + "public/js"))
 app.set("views", "./docs")
 app.set("view engine", "ejs")
 
-app.get('/', (req, res) => {
+app.get('', (req, res) => {
     try {
-        res.render('login.ejs')
+        res.render('/docs/login.ejs')
     } catch (error) {
         console.log(error.message)
     }

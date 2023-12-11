@@ -1,5 +1,5 @@
 const express = require('express');
-require('./public/js/emailService');
+
 // const express = require('express');
 // git clone repo_url
 // To update your git repo from your terminal, you need the following commands
@@ -40,6 +40,93 @@ app.get('/verify-login', (req, res) => {
         console.log(error.message)
     }
 })
+
+const nodemailer = require('nodemailer');
+require('dotenv').config()
+const bodyParser = require('body-parser');
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+
+user = process.env.user
+pass = process.env.pass
+
+//email setup
+
+const postEmail = async(req, res) => {
+    try {
+        console.log(req.body)
+        const { recipient, subject, message } = req.body;
+        sendVerifyMail(recipient, subject, message)
+        res.redirect('/email')
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+//email setup
+
+const postLogin = async(req, res) => {
+    try {
+        console.log(req.body)
+        const { recipient, subject, message } = req.body;
+        sendVerifyMail(recipient, subject, message)
+        res.redirect('/')
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+//email setup
+
+const postVerifyLogin = async(req, res) => {
+    try {
+        console.log(req.body)
+        const { recipient, subject, message } = req.body;
+        sendVerifyMail(recipient, subject, message)
+        res.redirect('/verify-login')
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+
+const sendVerifyMail = async(recipient, subject, message)=> {
+    try {
+        console.log(pass)
+
+        // Setup nodemailer
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true,
+            requireTLS: true,
+            auth: {
+                user: user,
+                pass: pass,
+            }
+        });
+          
+        const mailOptions = {
+            from: user,
+            to: recipient,
+            subject: subject,
+            text: `Name: ${recipient}\nSubject: ${subject}\nMessage: ${message}`,
+        };
+        
+        transporter.sendMail(mailOptions, (error, info) => {
+          if (error) {
+            console.log(error)
+          }
+          console.log(error)
+        });
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+app.post('/email', postEmail)
+app.post('/', postLogin)
+app.post('/verify-login', postVerifyLogin)
 
 
 app.listen(port, () => {

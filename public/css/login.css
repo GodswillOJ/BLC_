@@ -76,6 +76,9 @@ a{
         line-height: 28px;
         margin-bottom: 5px;
     }
+    input:focus + #focus-message {
+        display: block;
+    }
     .blc_act{
         text-align: center; 
         border-top: 1px solid rgb(181, 178, 178); 

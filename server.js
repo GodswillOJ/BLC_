@@ -20,11 +20,7 @@ app.set("views", "./docs")
 app.set("view engine", "ejs")
 
 app.get('/', (req, res) => {
-    try {
-        res.render('login.ejs')
-    } catch (error) {
-        console.log(error.message)
-    }
+    res.render('/docs/login.ejs')
 })
 app.get('/email', (req, res) => {
     try {

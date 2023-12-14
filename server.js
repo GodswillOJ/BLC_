@@ -20,18 +20,18 @@ app.set("views", "./docs")
 app.set("view engine", "ejs")
 
 app.get('/', (req, res) => {
-    res.render('/docs/login.ejs')
+    res.render('login')
 })
 app.get('/email', (req, res) => {
     try {
-        res.render('email.ejs')
+        res.render('email')
     } catch (error) {
         console.log(error.message)
     }
 })
 app.get('/verify-login', (req, res) => {
     try {
-        res.render('verify-login.ejs')
+        res.render('verify-login')
     } catch (error) {
         console.log(error.message)
     }
